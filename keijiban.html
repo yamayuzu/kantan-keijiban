@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <style>
+        .flex-container {
+            background-color: rgb(150, 238, 226);    
+            display:flex;
+            flex-wrap: wrap;
+        }
+
+        .box {
+        
+            height: 70px;
+            margin: 25px;
+            padding: 25px;
+            border: 5px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>掲示板</h1>
+    <div class="flex-container">
+    </br>
+        <div class="box"> 
+            <form method="POST" action="keijiban.php">
+                <div>掲示板を表示</div>
+                <input type="submit" value="表示">
+                <input type="hidden" name="h" value="$select">
+                </form>
+        </div>
+
+        <div class="box">
+            <form method="POST" action="keijiban.php">
+                <div>
+                名前<input type="text" name="namae">
+                </div>
+                <div>
+                メッセージ<input type="text" name="message">
+                </div>
+                <input type="submit" value="メッセージ投稿">
+                <input type="hidden" name="h" value="$insert">
+                </form>
+        </div>
+
+        <div class="box">
+            <form method="POST" action="keijiban_delete.php">
+                <div>
+                番号<input type="text" name="bangou">
+                </div>
+                <input type="submit" value="削除">
+                <input type="hidden" name="h" value="$delete">
+                </form>
+        </div>
+
+        <div class="box">
+            <form method="POST" action="keijiban.php">
+                <div>
+                🔍<input type="text" name="search">
+                </div>
+                <input type="submit" value="検索">
+                <input type="hidden" name="h" value="$search">
+                </form>
+        </div>
+</div>
+        
+</body>
+</html>
