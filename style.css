@@ -1,0 +1,12 @@
+body {
+    background-color:#B2AA8E; 
+}
+
+.box {        
+    color:#0C1B33;
+    margin: 3px;
+    padding: 8px;
+    border: 2px #0C1B33;
+    border-style: none;
+    border-bottom-style: dotted;
+}

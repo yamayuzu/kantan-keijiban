@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        .flex-container {
+            display: flex;
+            
+            flex-direction: column;
+        }
+        
+    </style>
+</head>
+<body>
+    <b>
+<div class="flex-container">
 <?php
 header('Content-Type: text/html;charset=utf-8');  // 日本語が正しく表示されるようにいれる
 
@@ -13,12 +30,15 @@ try {
 
     $re = $dbh->query("SELECT * FROM keijiban_tb");
     while($kekka = $re->fetch()) {
+        print "<div class='box'>";
+        print "No." ;
         print $kekka[0];                               // $re　の中身を表示します。
         print " ";
         print $kekka[1];
         print ":";
         print $kekka[2];
         print "<br>";
+        print "</div>";
     }
 
 } catch (PDOException $e) {
@@ -26,3 +46,8 @@ try {
 }
 
 ?>
+<a href="http://127.0.0.1:8080/keijiban/keijiban.html">戻る</a>
+</div>
+</b>
+</body>
+</html>

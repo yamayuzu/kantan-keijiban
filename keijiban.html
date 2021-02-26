@@ -2,29 +2,33 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+    <link rel="stylesheet" href="style.css"> 
     <style>
+        
         .flex-container {
-            background-color: rgb(150, 238, 226);    
-            display:flex;
+            display: flex; 
             flex-wrap: wrap;
         }
 
         .box {
-        
+            width: 500px;
             height: 70px;
             margin: 25px;
             padding: 25px;
-            border: 5px solid black;
+            border:3px #0C1B33;
+            border-style: dotted;
         }
+
     </style>
 </head>
 <body>
-    <h1>掲示板</h1>
-    <div class="flex-container">
+    <font size="7"  color="" face="sans-serif">　　　掲示板</font>
+    <font size="4"  color="" face="sans-serif">
     </br>
+    <b>
+    <div class="flex-container">
         <div class="box"> 
-            <form method="POST" action="keijiban.php">
+            <form method="POST" action="keijiban_select.php">
                 <div>掲示板を表示</div>
                 <input type="submit" value="表示">
                 <input type="hidden" name="h" value="$select">
@@ -32,7 +36,7 @@
         </div>
 
         <div class="box">
-            <form method="POST" action="keijiban.php">
+            <form method="POST" action="keijiban_insert.php">
                 <div>
                 名前<input type="text" name="namae">
                 </div>
@@ -55,7 +59,7 @@
         </div>
 
         <div class="box">
-            <form method="POST" action="keijiban.php">
+            <form method="POST" action="keijiban_search.php">
                 <div>
                 🔍<input type="text" name="search">
                 </div>
@@ -63,6 +67,9 @@
                 <input type="hidden" name="h" value="$search">
                 </form>
         </div>
+    </div>
+    </b>
+</font>
 </div>
         
 </body>
