@@ -26,11 +26,12 @@ $user = 'root';
 $password = 'password';
 
 try { 
-    $dbh = new PDO($dsn, $user, $password);
+$dbh = new PDO($dsn);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // この下にプログラムを書きましょう。
     $d = $_POST["search"];
-    $aa = $dbh->query("SELECT * FROM keijiban_tb WHERE message LIKE '$d'");
+    $aa = $dbh->query("SELECT * FROM keijibanY WHERE message LIKE '$d'");
     while($kekka = $aa->fetch()) {
         print "<div class='box'>";
         print "No.";

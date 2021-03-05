@@ -26,7 +26,8 @@ $user = 'root';
 $password = 'password';
 
 try { 
-    $dbh = new PDO($dsn, $user, $password);
+    $dbh = new PDO($dsn);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // この下にプログラムを書きましょう。
 
@@ -37,7 +38,7 @@ print "さんが";
 print "「";
 print $_POST["message"];
 print "」を投稿しました";
-$dbh->query("INSERT INTO keijiban_tb (namae,message) VALUES('{$a}','{$b}')");
+$dbh->query("INSERT INTO keijibanY (namae,message) VALUES('{$a}','{$b}')");
 
 
 } catch (PDOException $e) {

@@ -16,11 +16,12 @@ header('Content-Type: text/html;charset=utf-8');  // 日本語が正しく表示
 require_once("../db_info.php");
 
 try { 
-    $dbh = new PDO($dsn, $user, $password);
+$dbh = new PDO($dsn);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // この下にプログラムを書きましょう。
 $c = $_POST["bangou"];
-$dbh->query("DELETE FROM keijiban_tb WHERE bangou = '$c'");
+$dbh->query("DELETE FROM keijibanY WHERE bangou = '$c'");
 
 print $c;
 print "を削除しました。";
